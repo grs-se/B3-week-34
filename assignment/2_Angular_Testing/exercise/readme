@@ -1,0 +1,152 @@
+# Angular Testing Challenge: Unit & E2E Tests
+
+## Goal
+
+Learn to write basic unit tests for Angular components with Jasmine/Karma and simple end-to-end (E2E) tests using Cypress.
+
+## What You'll Build
+
+A simple GreetingComponent that has a name input and a greet() method.
+
+Unit tests that verify the greet method behaves correctly.
+
+A Cypress E2E test that simulates user input on a login form.
+
+## Step-by-Step Instructions
+
+### 1. Create the GreetingComponent
+
+Create the file greeting.component.ts:
+
+```typeScript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-greeting',
+  template: `<h1>{{ greet() }}</h1>`
+})
+export class GreetingComponent {
+  @Input() name: string = '';
+
+  greet(): string {
+    return `Hello, ${this.name}!`;
+  }
+}
+```
+
+### 2. Write Unit Tests for GreetingComponent
+
+Create greeting.component.spec.ts next to the component file:
+
+```typeScript
+
+import { GreetingComponent } from './greeting.component';
+
+describe('GreetingComponent', () => {
+  let component: GreetingComponent;
+
+  beforeEach(() => {
+    component = new GreetingComponent();
+  });
+
+  it('should show the correct greeting', () => {
+    component.name = 'Alice';
+    expect(component.greet()).toBe('Hello, Alice!');
+  });
+
+  it('should greet with empty name if none provided', () => {
+    component.name = '';
+    expect(component.greet()).toBe('Hello, !');
+  });
+});
+```
+
+### 3. Run Unit Tests with Karma
+
+From your terminal, navigate to your project root and run:
+
+```bash
+
+ng test
+```
+
+Karma will open a browser and run the tests. Ensure both tests pass.
+
+### 4. Create a Basic Login Component (For E2E Testing)
+
+Create the file login.component.html (you'll typically include this within a component's template, e.g., app.component.html for simplicity in this example):
+
+```html
+
+<form>
+  <input name="email" placeholder="Email" />
+  <input name="password" type="password" placeholder="Password" />
+  <button type="submit">Login</button>
+</form>
+```
+
+### 5. Setup Cypress for E2E Tests
+
+In your project root, install Cypress:
+
+```Bash
+
+npm install cypress --save-dev
+Add this to your package.json scripts section:
+
+JSON
+
+"scripts": {
+  "e2e": "cypress open"
+}
+```
+
+### 6. Write a Cypress E2E Test
+
+Create cypress/e2e/login.cy.ts:
+
+```TypeScript
+
+describe('Login Form', () => {
+  it('logs in a user', () => {
+    cy.visit('/login'); // Adjust URL as needed (e.g., if you serve login on '/')
+    cy.get('input[name="email"]').type('user@example.com');
+    cy.get('input[name="password"]').type('123456');
+    cy.contains('Login').click();
+    cy.url().should('include', '/dashboard'); // Assert redirection to dashboard
+  });
+});
+```
+
+### 7. Run Cypress E2E Tests
+
+Run the Cypress UI:
+
+```Bash
+
+npm run e2e
+```
+
+Click the test spec (login.cy.ts) to run it. Watch the browser simulate the login flow.
+
+### What This Teaches
+
+How to write and structure unit tests with Jasmine.
+
+Use describe, it, beforeEach, and expect.
+
+How to run Angular unit tests with Karma.
+
+How to install and run Cypress for E2E testing.
+
+Writing a basic Cypress test that simulates user interactions.
+
+### Testing Best Practices Recap
+
+Write one it() block per expected behavior.
+
+Avoid testing private/internal methods.
+
+Use mocks/spies when dealing with services.
+
+Write E2E tests for critical user journeys.

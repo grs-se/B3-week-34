@@ -1,0 +1,47 @@
+[
+  {
+    "id": 10,
+    "name": "Starry Night",
+    "price": 2000000,
+    "discounted": true,
+    "pictureUrl": "assets/images/image.png",
+    "brand": "Vincent van Gogh",
+    "type": "Painting"
+  },
+  {
+    "id": 11,
+    "name": "The Persistence of Memory",
+    "price": 1500000,
+    "discounted": true,
+    "pictureUrl": "assets/images/image-2.png",
+    "brand": "Salvador Dalí",
+    "type": "Painting"
+  },
+  {
+    "id": 12,
+    "name": "Mona Lisa",
+    "price": 3000000,
+    "discounted": true,
+    "pictureUrl": "assets/images/image-3.png",
+    "brand": "Leonardo da Vinci",
+    "type": "Painting"
+  },
+  {
+    "id": 20,
+    "name": "The Scream",
+    "price": 1800000,
+    "discounted": true,
+    "pictureUrl": "assets/images/image.png",
+    "brand": "Edvard Munch",
+    "type": "Painting"
+  },
+  {
+    "id": 21,
+    "name": "Girl with a Pearl Earring",
+    "price": 1200000,
+    "discounted": true,
+    "pictureUrl": "assets/images/image.png",
+    "brand": "Johannes Vermeer",
+    "type": "Painting"
+  }
+]

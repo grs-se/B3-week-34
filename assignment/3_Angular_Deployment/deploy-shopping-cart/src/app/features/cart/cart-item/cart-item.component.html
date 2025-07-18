@@ -1,0 +1,27 @@
+@if (cartService.cart()?.items?.length! > 0) {
+<li class="cart-item">
+    <article>
+        <figure>
+            <a>
+                <img class="cart-img" [src]="item().pictureUrl" [alt]="item().productName" />
+            </a>
+        </figure>
+        <figcaption>
+            <p class="product-name">{{ item().productName }}</p>
+            <p class="brand">Brand: {{ item().brand }}</p>
+            <p class="price">RRP: £ {{ item().price }}</p>
+            <p class="discounted">Discounted Price: £ {{ item().price | discount }}</p>
+            <div class="controls">
+                <label for="quantity-{{item().productId}}">Qty:</label>
+                <button (click)="decrementQuantity()" [disabled]="item().quantity <= 1"
+                    aria-label="Decrease quantity">-</button>
+                <input id="quantity-{{item().productId}}" type="number" min="1" [value]="item().quantity" readonly />
+                <button (click)="incrementQuantity()" aria-label="Increase quantity">+</button>
+                <button class="remove-btn" (click)="removeItemFromCart()">
+                    Remove
+                </button>
+            </div>
+        </figcaption>
+    </article>
+</li>
+}

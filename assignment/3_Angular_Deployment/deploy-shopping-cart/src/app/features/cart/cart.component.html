@@ -1,0 +1,12 @@
+<section>
+  @if (cartService.cart()?.items?.length! > 0) {
+  <h2>Shopping Cart</h2>
+  <ul id="shopping-cart">
+    @for (item of cartService.cart()?.items; track item.productId) {
+    <app-cart-item [item]="item"></app-cart-item>
+    }
+  </ul>
+  <app-order-summary></app-order-summary>
+  }
+
+</section>

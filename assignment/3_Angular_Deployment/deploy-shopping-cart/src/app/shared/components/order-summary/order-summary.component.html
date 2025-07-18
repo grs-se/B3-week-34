@@ -1,0 +1,27 @@
+<div id="order-summary-container">
+    <div id="order-summary-card">
+        <p id="order-summary-title">Order summary</p>
+        <div id="order-summary-details">
+            <div>
+                <dl>
+                    <dt>Subtotal</dt>
+                    <dd>
+                        {{cartService.totals()?.subtotal | currency}}
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>Discount</dt>
+                    <dd class="discount">
+                        -{{cartService.totals()?.discount | currency}}
+                    </dd>
+                </dl>
+            </div>
+            <dl class="total-row">
+                <dt>Total</dt>
+                <dd>
+                    {{cartService.totals()?.total | currency}}
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+div {
+  margin: 0 auto;
+  margin-top: 8rem;
+  max-width: 900px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+
+thead tr {
+  text-transform: uppercase;
+  color: #4b5563;
+  font-size: 0.9rem;
+  background: #f9fafb;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+tbody tr:hover {
+  background: #f3f4f6;
+}
+
+tbody th {
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+<header>
+    <img src="/assets/images/logo.png" alt="logo" id="logo" routerLink="/">
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/">Home</a>
+            </li>
+
+            <li>
+                <a routerLink="shop">Shop</a>
+            </li>
+            <!-- @for (item of configuredRoutes; track item) {
+            <li>
+                <a [routerLink]="item.path">{{ item.title }}</a>
+            </li>
+            } -->
+        </ul>
+    </nav>
+    <div id="nav-actions">
+        <div id="dropdown" tabindex="0">
+            <button id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                Menu <span aria-hidden="true">&#9662;</span>
+            </button>
+            <ul id="dropdown-menu" tabindex="-1">
+                <li>
+                    <a routerLink="/shopping-cart">
+                        <i class="fa fa-shopping-cart"></i> View basket
+                    </a>
+                </li>
+                <!-- <li>
+                    <a routerLink="/orders">
+                        <i class="fa fa-history"></i> View orders
+                    </a>
+                </li> -->
+
+            </ul>
+
+        </div>
+
+    </div>
+</header>

@@ -1,0 +1,57 @@
+#shop-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#shop-paginator {
+  background: #fff;
+}
+
+#shop-search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 1rem;
+}
+
+#shop-search-input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #222;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+#shop-search-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#shop-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+#shop-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
